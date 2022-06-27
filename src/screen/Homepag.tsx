@@ -2,6 +2,7 @@ import { ImageBackground, Pressable } from 'react-native'
 import React from 'react'
 import { Box, Button, Heading, Icon, Text, View } from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
+
 const Homepag = ({ navigation }) => {
   return (
     <Box>
