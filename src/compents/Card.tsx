@@ -2,18 +2,26 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import {
   Box,
+  Button,
   Center,
   FlatList,
   Heading,
   HStack,
   IconButton,
   Stack,
+  Tooltip,
   VStack,
 } from 'native-base'
 import { MaterialIcons, AntDesign } from '@expo/vector-icons'
+
 const Card = () => {
   const [Data, setData] = React.useState([])
-
+  const Datacat = (str, num) => {
+       if (str.length > num) {
+         return str.substring(0, num) + "...";
+       }
+       return str;
+     }
   const fetchData = async () => {
     try {
       const resp = await fetch(
@@ -37,61 +45,67 @@ const Card = () => {
   }, [])
   const renderItem = ({ item }) => {
     return (
-      <VStack mx="3" my="3" rounded="lg" bg="gray.100" p="4" shadow="9">
-        <Box>
+      <VStack
+        bgColor='black'
+        
+      
+        mx="3" my="3" rounded="lg" p='2' shadow="9">
+        <Box >
           <Image
-         
             source={{ uri: item.img }}
             style={{
-              width: 180,
+              width: 200,
               height: 170,
-              borderRadius: 10,
+              borderRadius: 5,
             }}
           />
-          <Heading size="xl">{item.title}</Heading>
-          <Text  style={{
-              color: 'white',
-            
-         margin:5
-,              borderRadius: 10
-            
-                     
-                    }}>{item.type}</Text>
-        </Box>
-        <HStack space={20}>
-          <VStack>
-              
-            <Heading size="lg" mt="2">
-            {item.price} $
-          </Heading>
-         
-          </VStack>
-          <TouchableOpacity >
-            <IconButton
-              style={{
-             
-              backgroundColor: 'green',
+          <Heading size="lg"  color='white' ml='3'>
+{Datacat(item.title, 15)+'...'}
 
-        
+          </Heading>
+          <Text
+            style={{
+              color: 'green',
+              fontSize: 20,
+
+              margin: 5,
+              borderRadius: 10,
+            }}
+          >
+            {item.type}
+          </Text>
+        </Box>
+        <HStack space={24}>
+          <VStack>
+            <Heading
+              color='white'
             
-                     
-                    }}
-              rounded="lg"
-             
-              variant="solid"
-              _icon={{
-                as: AntDesign,
-                name: 'shoppingcart',
-                size: '3xl',
-              }}
-            />
-          </TouchableOpacity>
+              size="lg" mt="2">
+              {item.price}$
+            </Heading>
+          </VStack>
+         
+            <Tooltip label="Click here to read more" openDelay={500}>
+              <IconButton
+                style={{
+                  backgroundColor: 'green',
+                }}
+                rounded="lg"
+                variant="solid"
+                _icon={{
+                  as: AntDesign,
+                  name: 'shoppingcart',
+                  size: '3xl',
+                }}
+              />
+            </Tooltip>
+          
         </HStack>
       </VStack>
     )
   }
   return (
-    <HStack mt="4">
+    <HStack mt="4"  >
       {Data && (
         <FlatList
           horizontal={true}
@@ -105,3 +119,7 @@ const Card = () => {
 }
 
 export default Card
+function substring(title: any, arg1: number) {
+  throw new Error('Function not implemented.')
+}
+

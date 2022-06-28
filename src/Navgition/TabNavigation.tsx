@@ -1,10 +1,10 @@
 import React from 'react'
 import { AntDesign, Ionicons, FontAwesome } from '@expo/vector-icons'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from '../screen/HomeScreen'
 import Chart from '../screen/Chart'
 import History from '../screen/History'
 import Notifications from '../screen/Notifications'
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator()
 const TabNavigation = () => {

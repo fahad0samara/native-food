@@ -1,11 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
+
 const History = () => {
   return (
-    <View>
-      <Text>History</Text>
-    </View>
+    
+    <View>All
+      <Text>All</Text>
+      </View>
+  
   )
 }
 
