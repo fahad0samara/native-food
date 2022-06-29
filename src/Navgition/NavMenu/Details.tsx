@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { COLOURS } from '../../database/items'
 import { AntDesign, FontAwesome, Entypo } from '@expo/vector-icons'
 
-const Details = ({ route, navigation }) => {
+const Details = ({ route, navigation }: { route: any; navigation: any }) => {
   const {
     name,
     price,
@@ -206,7 +206,7 @@ const Details = ({ route, navigation }) => {
         Ingredients
       </Text>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        {ingredients.map((data:any, index:any) => {
+        {ingredients.map((data: any, index: any) => {
           return (
             <View
               key={index}

@@ -22,7 +22,7 @@ import Menu from '../Navgition/NavMenu/Menu'
 
 
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation  }) => {
    
   return (
     <SafeAreaView>
