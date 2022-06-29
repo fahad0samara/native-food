@@ -16,13 +16,17 @@ import {
 } from 'native-base'
 import { MaterialIcons, AntDesign } from '@expo/vector-icons'
 import Card from '../compents/Card'
+import Menu from '../Navgition/NavMenu/Menu'
 
 
 
 
-const HomeScreen = ({navigation}) => {
+
+const HomeScreen = ({ navigation }) => {
+   
   return (
     <SafeAreaView>
+       <ScrollView>
       <Box>
         <HStack alignItems="center">
           <VStack ml="5">
@@ -80,12 +84,9 @@ const HomeScreen = ({navigation}) => {
           </Text>
           <Text fontSize="lg" color='green.500'>See More </Text>
       </HStack>
-      <HStack space='16' mx='5'>
-          <Button title="Go to Home" onPress={() => navigation.navigate('All')} />
-        <Button>All</Button>
-        <Button>All</Button>
-          <Button>All</Button>
-     </HStack>
+     
+      <Menu/>
+  </ScrollView>
     </SafeAreaView>
   )
 }
