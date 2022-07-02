@@ -2,7 +2,7 @@ import React from 'react'
 import { AntDesign, Ionicons, FontAwesome } from '@expo/vector-icons'
 import HomeScreen from '../screen/HomeScreen'
 import Chart from '../screen/Chart'
-import History from '../screen/History'
+
 import Notifications from '../screen/Notifications'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -81,7 +81,7 @@ const TabNavigation = () => {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="History"
         component={History}
         options={{
@@ -93,7 +93,7 @@ const TabNavigation = () => {
             />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   )
 }

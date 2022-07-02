@@ -12,6 +12,8 @@ import {
 import { MaterialIcons, Ionicons, FontAwesome } from '@expo/vector-icons'
 import { Categories, COLOURS } from '../database/items'
 
+
+
 const Chart = () => {
   return (
     <View
@@ -48,6 +50,9 @@ const Chart = () => {
             your card
           </Text>
         </View>
+
+          
+        
       </ScrollView>
     </View>
   )
